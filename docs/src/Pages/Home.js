@@ -31,12 +31,11 @@ function Home() {
             <h1> {data.getCityByName.name} </h1>
             <h1>
               {" "}
-              Temperature: {data.getCityByName.weather.temperature.actual}
+              Temperature: {(data.getCityByName.weather.temperature.actual - 273.15).toFixed(2)}
             </h1>
             <h1>
-              Description: {data.getCityByName.weather.summary.description}
+              Conditions: {data.getCityByName.weather.summary.description}
             </h1>
-            <h1>Wind Speed: {data.getCityByName.weather.wind.speed}</h1>
           </>
         )}
       </div>
