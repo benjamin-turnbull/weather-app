@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { GET_WEATHER_QUERY } from "../graphql/Queries";
+import "../App.css";
 
 function Home() {
   const [citySearched, setCitySearched] = useState("");
@@ -15,17 +16,19 @@ function Home() {
   }
 
   return (
-    <div className="home">
-      <h1>Search For Weather</h1>
+    <div className="hero-container">
+    <video src='../../public/videos/video-2.mp4' autoPlay loop muted />
+      <h1 className="header">Search For Weather</h1>
       <input
+        className="field"
         type="text"
         placeholder="City name..."
         onChange={(event) => {
           setCitySearched(event.target.value);
         }}
       />
-      <button onClick={() => getWeather()}> Search</button>
-      <div className="weather">
+      <button className="label" onClick={() => getWeather()}> Search</button>
+      <div>
         {data && (
           <>
             <h1> {data.getCityByName.name} </h1>
