@@ -36,7 +36,6 @@ function Home() {
       <div className="text">
         {data && (
           <>
-            <h1> {data.getCityByName.name} </h1>
             <h1>
               {" "}
               Temperature: {(data.getCityByName.weather.temperature.actual - 273.15).toFixed(2)}
